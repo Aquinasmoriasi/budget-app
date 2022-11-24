@@ -1,4 +1,4 @@
 class GroupExpense < ApplicationRecord
-  belongs_to :expenses
-  belongs_to :groups
+  belongs_to :expense
+  belongs_to :group
 end

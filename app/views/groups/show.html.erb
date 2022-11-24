@@ -1,0 +1,10 @@
+<h2>Details</h2>
+
+<div id="groups">
+  <% @group_expenses.each do |group| %>
+    <p>
+        <%= group.expense.name %>
+    </p>
+  <% end %>
+  <%= link_to "Add new expense", new_group_expense_path(@group) %>
+</div>

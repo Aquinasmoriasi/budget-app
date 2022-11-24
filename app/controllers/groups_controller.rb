@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @group_expenses = GroupExpense.includes(:expense).where(group_id: @group)
   end
 
   def new
@@ -13,7 +14,7 @@ class GroupsController < ApplicationController
 
   def create
     group = Group.new(group_params)
-    group.author = current_user
+    group.user = current_user
     if group.save
       redirect_to root_path
     else

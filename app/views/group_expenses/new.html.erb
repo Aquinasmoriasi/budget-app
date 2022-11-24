@@ -1,0 +1,17 @@
+<%= form_with(model: @expense, url: group_expenses_url, method: :post) do |form| %>
+   <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+   </div>
+   <div>
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+   </div>
+   <div class="d-flex flex-column mb-2">
+      <%= form.label "Category" %>
+      <%= select_tag "group", options_for_select(@groups.map { |group| [group.name, group.id] }), class: "col-4 p-1  border rounded" %>
+   </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

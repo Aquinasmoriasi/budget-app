@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   resources :expenses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  authenticated :user do
+    root to: 'groups#index'
+  end
+
+  devise_scope :user do
+    root to: 'devise/sessions#splash', as: :splash_root
+  end
+
   # Defines the root path route ("/")
-  root "groups#index"
+
+  get '/older_groups' => "groups#older_index"
 end

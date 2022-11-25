@@ -1,10 +1,33 @@
-<h2>Details</h2>
+<div class="d-flex justify-content-between top p-2">
+    <%= link_to root_path, class: 'text-light h1' do %>
+        <i class="bi bi-arrow-left"></i>
+    <% end %>
+    <h2 class='text-light h1'>DETAILS</h2>
+    <p></p>
+</div>
 
-<div id="groups">
+<% if @group_expenses.size > 0%>
+<div id="groups" class="p-2">
+  <p class="d-flex justify-content-between">
+    <span>Total payment:</span><span class='font-weight-bold'>$<%= @total %></span>
+  </p>
   <% @group_expenses.each do |group| %>
-    <p>
-        <%= group.expense.name %>
-    </p>
+    <div class="d-flex justify-content-between align-items border bg-light mt-2 mb-2 p-1">
+      <div class="d-flex flex-column">
+        <p>  
+         <%= group.expense.name %>
+        </p>
+        <small class='text-secondary'>
+          <%= group.created_at.strftime("%d %h %Y")%> at <%=group.created_at.strftime("%l.%M%P")%>
+        </small>
+      </div>
+      <p class='font-weight-bold font-italic'>$<%= group.expense.amount %></p>
+    </div>
   <% end %>
-  <%= link_to "Add new expense", new_group_expense_path(@group) %>
+ <% else %>
+    <p class="p-2">No expense added yet for this category</p>
+ <% end %>
+  <div class="text-light footer d-flex justify-content-center p-3">
+    <%= link_to "Add new expense", new_group_expense_path(@group), class: 'btn border border-light p-2' %>
+  </div>
 </div>

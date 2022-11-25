@@ -1,7 +1,7 @@
 class GroupExpensesController < ApplicationController
   def new
     @expense = Expense.new
-    @groups = Group.all
+    @groups = Group.where(user: current_user)
   end
 
   def create
@@ -11,7 +11,7 @@ class GroupExpensesController < ApplicationController
       expense_group = GroupExpense.create(expense_id: expense.id, group_id: params[:group])
       redirect_to group_path(params[:group])
     else
-      flash[:notice] = "Error during creation"
+      flash[:notice] = 'Error during creation'
     end
   end
 

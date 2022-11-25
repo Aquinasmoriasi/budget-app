@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
   def index
-    @expenses = Expense.all
+    @expenses = Expense.where(user: current_user)
   end
 
   def show
@@ -12,6 +12,6 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    group_expense = GroupExpense.new()
+    group_expense = GroupExpense.new
   end
 end

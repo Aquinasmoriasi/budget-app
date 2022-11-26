@@ -152,6 +152,18 @@ This project is deployed at [https://stormy-plateau-90686.herokuapp.com/](https:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> This project will eventually include:
+
+- [ ] A desktop version
+- [ ] A feature to enable users upload their profile pictures
+- [ ] QR code integration to process payments
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 🤝 Contributing <a name="contributing"></a>
 

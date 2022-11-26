@@ -16,7 +16,7 @@ RSpec.describe 'Groups', type: :request do
       expect(response).to render_template(:index)
     end
 
-    it "should render page contenting 'Food'" do
+    it "should contain the 'CATEGORIES' header" do
       expect(response.body).to include('CATEGORIES')
     end
   end

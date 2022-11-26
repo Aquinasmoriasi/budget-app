@@ -8,7 +8,7 @@ RSpec.describe 'GroupExpenses', type: :feature do
       visit new_user_session_path
       page.fill_in placeholder: 'Email', with: user.email
       page.fill_in placeholder: 'password', with: user.password
-      click_button 'Save'
+      click_button 'Next'
       visit new_group_expense_path
     end
 

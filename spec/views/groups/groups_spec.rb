@@ -8,7 +8,7 @@ RSpec.describe 'Groups', type: :feature do
       visit new_user_session_path
       page.fill_in placeholder: 'Email', with: user.email
       page.fill_in placeholder: 'password', with: user.password
-      click_button 'Save'
+      click_button 'Next'
       3.times do
         @group = Group.create! name: 'McGyver', icon: 'shorturl.at/nxQZ7', user:
       end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe GroupExpense, type: :model do
-   describe 'Group model' do
+  describe 'Group model' do
     before(:each) do
       @user = User.create! name: 'Anonymus', email: 'anonymus@anon.co', password: 'password'
       @group = Group.create! name: 'McGyver', icon: 'shorturl.at/nxQZ7', user: @user

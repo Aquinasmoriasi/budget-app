@@ -8,7 +8,7 @@ class GroupExpensesController < ApplicationController
     expense = Expense.create(name: expense_params[:name], author_id: current_user.id, amount: expense_params[:amount])
 
     if expense.save
-      expense_group = GroupExpense.create(expense_id: expense.id, group_id: params[:group])
+      GroupExpense.create(expense_id: expense.id, group_id: params[:group])
       redirect_to group_path(params[:group])
     else
       flash[:notice] = 'Error during creation'

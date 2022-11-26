@@ -39,7 +39,7 @@ RSpec.describe 'Groups', type: :request do
     it "should render page contenting 'Food'" do
       expect(response.body).to include('DETAILS')
     end
-    it "should have a link to add an expense" do
+    it 'should have a link to add an expense' do
       expect(response.body).to include('/group_expenses/new')
     end
   end

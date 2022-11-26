@@ -4,17 +4,17 @@ RSpec.describe 'Groups', type: :feature do
   describe 'GET groups#index' do
     before(:each) do
       user = User.create name: 'anonymus', email: 'anonymus@anon.co', password: 'password'
-      
+
       visit new_user_session_path
       page.fill_in placeholder: 'Email', with: user.email
       page.fill_in placeholder: 'password', with: user.password
       click_button 'Save'
       3.times do
-        @group = Group.create! name: 'McGyver', icon: 'shorturl.at/nxQZ7', user: user
+        @group = Group.create! name: 'McGyver', icon: 'shorturl.at/nxQZ7', user:
       end
     end
 
-    it "should display the category names that have been added" do
+    it 'should display the category names that have been added' do
       visit root_path
       expect(page).to have_content(@group.name).thrice
     end
